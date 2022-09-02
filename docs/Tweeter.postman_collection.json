@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "2b9c3877-2f0a-4097-9087-d96a79beb255",
+		"name": "Tweeter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Tweet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tweet\": \"Hi, my name is rahul more. i am making this qyuick little video to notify you guys its ok to not know everything!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/tweet",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tweet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
