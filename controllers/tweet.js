@@ -3,8 +3,14 @@ import { splitMessage } from '../utils/splitMessage.js'
 
 const tweetController = {};
 
-tweetController.add = async (req, res) => {
+tweetController.get = async (req, res) => {
+    return res.status(200).json({
+        title: "Welcome to tweeter!",
+        error: false,
+    });
+}
 
+tweetController.add = async (req, res) => {
     const result = validationResult(req);
     if (result.errors.length > 0) {
         return res.status(200).json({
@@ -22,5 +28,6 @@ tweetController.add = async (req, res) => {
         data: message
     });
 }
+
 
 export default tweetController;
