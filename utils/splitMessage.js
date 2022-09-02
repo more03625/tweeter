@@ -30,25 +30,25 @@ export const splitMessage = (input) => {
 
 export const chunkString = (str, size) => {
 
-    var chunks = []
-    var spacePieces = str.split(' ')
+    let chunks = []
+    let spacePieces = str.split(' ')
     return spacePieces.reduce(
         function (chunks, piece, index) {
-            var isFirstPiece = index === 0
+            let isFirstPiece = index === 0
 
-            var chunkSeparator = isFirstPiece ? '' : ' '
-            var currentChunk = chunks[chunks.length - 1]
+            let chunkSeparator = isFirstPiece ? '' : ' '
+            let currentChunk = chunks[chunks.length - 1]
 
             // If a piece is longer than size then split that piece.
             if (piece.length > size) {
                 // Add whatever we can to the current
-                var startingPieceIndex = size - (chunkSeparator + currentChunk).length
+                let startingPieceIndex = size - (chunkSeparator + currentChunk).length
                 currentChunk += chunkSeparator + piece.substring(0, startingPieceIndex)
                 chunks[chunks.length - 1] = currentChunk
 
                 // Then just add the rest to more chunks
-                var leftover = piece.substring(startingPieceIndex)
-                for (var i = 0; i < leftover.length; i += size) {
+                let leftover = piece.substring(startingPieceIndex)
+                for (let i = 0; i < leftover.length; i += size) {
                     chunks.push(leftover.substring(i, i + size))
                 }
             }
